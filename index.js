@@ -1,7 +1,5 @@
 const app = require('./app')
-const dotenv = require('./.env') // это костыль
-// const port = proccess.env.PORT || 8000
-const port = dotenv.PORT || 2000
+const port = process.env.PORT || 8000
 
 
 console.log(process.env.PORT)

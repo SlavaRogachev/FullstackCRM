@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const passport = require('passport')
 // const cors = require('cors')  
 // const morgan = require('morgan')
 const mongoose = require('mongoose')
@@ -13,10 +14,15 @@ const app = express()
 
 mongoose.connect(keys.mongoURI, {
     useNewUrlParser: true, 
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
 })
     .then(() => console.log('MongoDB connected'))
     .catch(e => console.log(e))
+
+app.use(passport.initialize())
+require('./middleware/passport')(passport)
 
 app.use(require('morgan')('dev'))
 app.use(bodyParser.urlencoded({extended: true}))
