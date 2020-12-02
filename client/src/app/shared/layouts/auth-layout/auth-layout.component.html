@@ -1,0 +1,17 @@
+<nav>
+    <div class="nav-wrapper grey darken-1">
+        <a router-link="/" class="brand-logo">Newborn</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li routerLinkActive="active">
+                <a router-link="/login">Вход</a>
+            </li>
+            <li>
+                <a router-link="/register">Регистрация</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    
+<div class="auth-block">
+    <router-outlet></router-outlet>
+</div>
