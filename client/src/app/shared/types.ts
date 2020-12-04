@@ -1,0 +1,2 @@
+type TokenType = string | null
+
